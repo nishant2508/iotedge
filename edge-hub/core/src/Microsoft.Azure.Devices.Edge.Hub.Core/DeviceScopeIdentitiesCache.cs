@@ -611,7 +611,7 @@ namespace Microsoft.Azure.Devices.Edge.Hub.Core
 
             public static void ErrorInRefreshCycle(Exception exception)
             {
-                Log.LogWarning((int)EventIds.ErrorInRefresh, "Encountered an error while refreshing the device scope identities cache. Will retry the operation in some time...");
+                Log.LogWarning((int)EventIds.ErrorInRefresh, $"Encountered an error while refreshing the device scope identities cache. Will retry the operation in some time...{exception.Message}");
                 Log.LogDebug((int)EventIds.ErrorInRefresh, exception, "Error details while refreshing the device scope identities cache");
             }
 
