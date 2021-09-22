@@ -40,6 +40,10 @@ case "$PACKAGE_OS" in
     'debian10')
         DOCKER_IMAGE='debian:10-slim'
         ;;
+    
+    'debian11')
+        DOCKER_IMAGE='debian:11-slim'
+        ;;
 
     'ubuntu18.04')
         DOCKER_IMAGE='ubuntu:18.04'
@@ -92,9 +96,11 @@ case "$PACKAGE_OS.$PACKAGE_ARCH" in
             apt-get update &&
             apt-get upgrade -y &&
             apt-get install -y --no-install-recommends \
-                binutils build-essential ca-certificates curl debhelper dh-systemd file git make \
+                binutils build-essential ca-certificates curl debhelper file git make \
                 gcc g++ pkg-config \
                 libcurl4-openssl-dev libssl-dev uuid-dev &&
+            (apt-get install -y --no-install-recommends \
+             dh-systemd || true) && 
         '
         ;;
     
