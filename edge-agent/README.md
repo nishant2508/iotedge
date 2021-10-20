@@ -1,5 +1,5 @@
 # Edge Agent
-This project contains the Edge Agent.
+This project contains the Edge Agent .
 
 ## Application Settings.
 
